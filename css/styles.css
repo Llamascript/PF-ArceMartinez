@@ -5,6 +5,13 @@
     4) Typography
     5) Manipulation
     6) Misc
+
+    Color palette:
+    Haze: rgb(140, 128, 116)
+    Cream: rgb(242, 226, 196)
+    Butter: rgb(252, 253, 237)
+    Plum: rgb(115, 34, 26)
+    Sienna: rgb(64, 20, 16)
 */
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
@@ -21,9 +28,11 @@ header {
     align-items: center;
 
     height: 21vh;
-    max-width: 100vw;
-    padding: 3vh 2vw;
-    background-color: aliceblue;
+    width: 100%;
+    padding: 3vh 0%;
+    background-color: rgb(242, 226, 196);
+
+    color: rgb(64, 20, 16);
 }
     .header-img {
         width: 12%;
@@ -50,9 +59,11 @@ header {
 
             font-family: 'EB Garamond', serif;
             font-weight: bold;
+            color: rgb(64, 20, 16);
         }
         .header-btn button:hover {
             cursor: pointer;
+            color: rgb(115, 34, 26);
         }
     
     header nav {
@@ -70,37 +81,45 @@ header {
             padding-left: 0%;
         }
             header nav ul li a{
-                color: black;
+                color: rgb(64, 20, 16);
                 text-decoration: none;
                 font-family: 'EB' Garamond, serif;
                 font-size: 1.1em;
                 font-weight: 600;
             }
             header nav ul li a:hover {
-                color: blueviolet;
+            color: rgb(115, 34, 26);
             }
 
 /* MAIN */
 main {
     min-height: 73vh;
-    width: 100vw;
-    padding: 5vh 2vw;
-    background-color: aquamarine;
+    width: 100%;
+    padding: 5vh 0%;
+    background-color: rgb(252, 253, 237);
+
+    color: rgb(64, 20, 16);
 }
     /* INDEX -> Carousel */
-
-    #carousel-llamascript {
-        margin: 2% auto;
-        max-height: 50%;
-        max-width: 80%;
+    #carousel-llama {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 35%;
+        margin: 2vh auto;
+        border-radius: 7px;
+        transition: all .5s ease;
     }
-        .carousel-item {
-            display: flex;
-            justify-content: center;
-            height: 50%;
-            width: auto;
-            margin: 1%;
-        }
+
+    #carousel-llama .carousel-inner .carousel-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 7px;
+    }
+    #carousel-llama:hover {
+        box-shadow: 0.3rem -0.3rem 1rem rgb(115, 34, 26),
+                    -0.3rem 0.3rem 1rem  rgb(64, 20, 16);
+    }
 
     /* INDEX -> Introduction text */
     .intro-txt {
@@ -176,6 +195,7 @@ main {
 #game {
     display: flex;
     justify-content: space-between;
+    background-color: rgb(252, 253, 237);
 }
     /* GAME SCREEN */
     .gamescreen {
@@ -190,7 +210,6 @@ main {
 
         /* ADVENTURE TEXT */
         .adv-txt {
-            background-color: beige;
 
             width: 98%;
             height: 38%;
@@ -237,7 +256,6 @@ main {
         
         /* CHARACTER DESCRIPTION IN-GAME */
         .character {
-            background-color: beige;
             display: flex;
 
             width: 98%;
@@ -421,23 +439,26 @@ main {
             font-size: 1.3em;
         }
 /* CONTACT INFO */
-.contact {
+footer {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     height: 20%;
-    max-width: 100vw;
-    padding: 1% 0%;
+    width: 100%;
+    padding: 1vh 0%;
+    background-color: rgb(242, 226, 196);
+
+    color: rgb(64, 20, 16);
 }
     .contact-info {
         height: 99%;
         width: 25%;
         }
 
-        .contact-info img {
-            width: 15%;
-            height: auto;
-            margin-left: 40%;
+        .contact-info i {
+            margin-left: 45%;
+            color: rgb(64, 20, 16);
         }
 
         .contact-info p {
