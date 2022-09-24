@@ -29,14 +29,16 @@ header {
 
     height: 21vh;
     width: 100%;
-    padding: 3vh 0%;
+    padding: 3vh 2vw;
     background-color: rgb(242, 226, 196);
+    box-sizing: border-box;
+    overflow: hidden;
 
     color: rgb(64, 20, 16);
 }
     .header-img {
         width: 12%;
-        height: 85%;
+        height: 65%;
     }
         .header-img img {
             width: 100%;
@@ -49,7 +51,7 @@ header {
 
     .header-btn {
         width: 12%;
-        height: 85%;
+        height: 65%;
     }
         .header-btn button {
             width: 100%;
@@ -82,20 +84,24 @@ header {
         }
             header nav ul li a{
                 color: rgb(64, 20, 16);
-                text-decoration: none;
+                text-decoration: underline transparent;
                 font-family: 'EB' Garamond, serif;
                 font-size: 1.1em;
-                font-weight: 600;
+                font-weight: 700;
+                transition: color .5s ease;
+                transition: text-decoration .5s ease;
             }
             header nav ul li a:hover {
             color: rgb(115, 34, 26);
+            text-decoration: underline;
             }
 
 /* MAIN */
 main {
     min-height: 73vh;
     width: 100%;
-    padding: 5vh 0%;
+    padding: 5vh 2vw;
+    box-sizing: border-box;
     background-color: rgb(252, 253, 237);
 
     color: rgb(64, 20, 16);
@@ -422,8 +428,11 @@ main {
     align-items: center;
 
     height: auto;
-    max-width: 96vw;
-    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(252, 253, 237);
+
+    color: rgb(64, 20, 16);
 }
     .data {
         padding: 4% 0%;
@@ -446,7 +455,8 @@ footer {
 
     height: 20%;
     width: 100%;
-    padding: 1vh 0%;
+    padding: 1vh 2vw;
+    box-sizing: border-box;
     background-color: rgb(242, 226, 196);
 
     color: rgb(64, 20, 16);
@@ -465,3 +475,33 @@ footer {
             font-family: 'EB' Garamond, serif;
             text-align: center;
         }
+
+/* MOBILE */
+@media screen and (max-width: 900px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 1% 1% 0%;
+    }
+        .header-img {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            width: auto;
+        }
+        .header h1 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            width: auto;
+        }
+        .header-btn {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            width: auto;
+        }
+        .header nav {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            width: auto;
+        }
+}
