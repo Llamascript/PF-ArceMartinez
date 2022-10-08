@@ -1,0 +1,279 @@
+main {
+    @include set_boxmodel(100%, 75%, 0, 0, 5vh, 2vw);
+    min-height: 73vh;
+    box-sizing: border-box;
+    background-color: map-get($colors, "primary");
+    color: map-get($colors, "danger");
+
+    #carousel-llama {
+        @include flex(null, wrap, justify-center, null, null,);
+        @include carousel_hover;
+        max-width: 35%;
+        margin: 2vh auto;
+        border-radius: 7px;
+
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 7px;
+                }
+            }
+        }
+    }
+
+    .intro-txt {
+        @include set_boxmodel(100%, 19.5%, 0%, 0%, 0%, 20%);
+        max-height: 19.5%;
+        max-width: 100%;
+        font-size: map-get($font_sizes, "plus_one");
+        text-align: center;
+    }
+
+    audio {
+        display: none;
+    }
+}
+
+.story {
+    @include grid_story();
+    max-width: 90%;
+    padding: 0% 5%;
+    margin: 2.5%;
+    
+    .story-img {
+        @include full_size();
+        &:hover {
+        box-shadow: .3rem -.2rem .1rem map-get($colors, "attention"),
+                    -.3rem .2rem .7rem map-get($colors, "danger");}
+        }
+
+        a {
+        @include full_size();
+
+            img {
+                @include full_size();
+            }
+        }
+
+    .story-desc {
+        @include full_size();
+
+        a {
+            color: map-get($colors, "danger");
+            text-decoration: none;
+
+            h2 {
+                margin-bottom: 5%;
+                font-size: map-get($font_sizes, "larger");
+            }
+
+            &:hover {
+                color: map-get($colors, "attention");
+            }
+        }
+    }
+
+    .story-prog {
+        @include center_text;
+        font-size: map-get($font_sizes, "largest");
+        font-weight: map-get($font_weights, "thick");
+        color: map-get($colors, "danger");
+    }
+}
+
+#game {
+    @include flex(null, null, space-between, null, null);
+    background-color: map-get($colors, "primary");
+
+    .gamescreen {
+        @include set_width_height(60%, 73vh);
+
+        img {
+            @include set_width_height(98%, 60%);
+            border: solid map-get($colors, "danger") 1px;
+        }
+
+        .adv-txt {
+            @include set_width_height(98%, 38%);
+            border: solid map-get($colors, "danger") 1px;
+            overflow: auto;
+            background-color: map-get($colors, "secondary");
+
+            p {
+                width: 95%;
+                padding: 1% 1%;
+                text-align: justify;
+                text-indent: 1.5em;
+            }
+        }   
+    }
+
+    .gamepad {
+        @include flex(null, wrap, center, flex-end, center);
+        @include set_width_height(40%, 73vh);
+
+        .btn-container {
+            @include grid_btn_container();
+            @include set_width_height(50%, 60%);
+
+            button {
+                margin: 10%;
+                border-radius: 10%;
+                border-color: map-get($colors, "danger");
+                background-color: map-get($colors, "secondary");
+                font-size: map-get($font_sizes, "plus_one");
+                font-weight: map-get($font_weights, "thicker");
+                
+                &:hover {
+                    cursor: pointer;
+                    background-color: lighten(map-get($colors, "secondary"), 5);
+                    color: map-get($colors, "attention");
+                    border-color: map-get($colors, "attention");
+                }
+            }
+        }
+
+        .character {
+            display: flex;
+            @include set_boxmodel(98%, 36%, 0%, 0%, 2%, 2%);
+            border: solid map-get($colors, "danger") 1px;
+            background-color: map-get($colors, "secondary");
+
+            a {
+                @include set_width_height(25%, 100%);
+                @include character_a_hover();
+
+                img {
+                    @include full_size();
+                }
+            }
+
+            .char-description {
+                @include set_boxmodel(71%, 98%, 0%, 3%, 0%, 0%);
+
+                p {
+                    font-size: map-get($font_sizes, "larger");
+                }
+
+                ul {
+                    list-style: none;
+                    margin-left: none;
+                    font-size: map-get($font_sizes, "plus_one");
+                }
+            }
+        }
+    }
+}
+
+#profile {
+    @include flex(null, wrap, null, null, null);
+    height: auto;
+
+    .char-info {
+        display: flex;
+        @include set_width_height(75%, 48%);
+        margin-right: 1%;
+        margin-bottom: 1%;
+
+        img {
+            @include set_width_height(19.8%, 80%);
+            border-radius: 10%;
+            border: solid rgba(0,0,0,.6) 2px;
+        }
+
+        .char-details {
+            @include set_width_height(72%, 100%);
+            margin-left: 3%;
+
+            h2 {
+                max-width: 100%;
+                margin-bottom: 1%;
+                font-size: map-get($font_sizes, "largest");
+            }
+
+            h3 {
+                max-width: 100%;
+                font-size: map-get($font_sizes, "larger");
+            }
+        }
+        .progress-bar {
+            background-color:map-get($colors,"attention");
+        }
+    }
+
+    .achievements {
+        @include flex(null, wrap, center, center, null);
+        @include set_boxmodel(20%, 33%, 0%, 0%, 1%, 1%);
+        border: solid map-get($colors, "danger") 2px;
+        text-align: center;
+
+        h2 {
+            font-size: map-get($font_sizes, "large");
+            color: map-get($colors, "danger");
+        }
+
+        ul {
+            padding-left: 0%;
+
+            a {
+                color: map-get($colors, "danger");
+                text-decoration: none;
+                &:hover {
+                    color: map-get($colors, "attention");
+                }
+            }
+        }
+    }
+
+    .char-desc-container {
+        @include flex(null, null, space-evenly, null, null);
+        @include set_width_height(100%, 50%);
+
+        .char-desc-item {
+            @include set_boxmodel(20%, 94%, 0%, 0%, 1%, .5%);
+            background-color: map-get($colors, "secondary");
+            border: solid map-get($colors, "danger") 1px;
+
+            &:hover {
+                background-color: lighten(map-get($colors, "secondary"), 5);
+                color: map-get($colors, "attention");
+            }
+
+            h2 {
+                font-size: map-get($font_sizes, "larger");
+                text-align: center;
+            }
+
+            ul {
+                padding-left: 0%;
+                font-size: map-get($font_sizes, "large");
+                list-style: none;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#credits {
+    @include flex(column, null, space-between, center, null);
+    @include set_width_height(100%, auto);
+    box-sizing: border-box;
+    background-color: map-get($colors, "primary");
+    color: map-get($colors, "danger");
+
+    .data {
+        padding: 4% 0%;
+        text-align: center;
+
+        h2 {
+            font-size: map-get($font_sizes, "larger");
+            font-weight: map-get($font_weights, "thin");
+        }
+
+        h3 {
+            font-size: map-get($font_sizes, "large");
+        }
+    }
+}

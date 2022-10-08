@@ -1,0 +1,64 @@
+@use "sass:math";
+
+header {
+    @include flex(null, wrap, space-evenly, center, null);
+    @include set_boxmodel(100%, math.div(100vh, 4), 0, 0, 3vh, 2vw);
+    box-sizing: border-box;
+    background-color: map-get($colors, "darker");
+    color: map-get($colors, "primary");
+    overflow: hidden;
+
+    .header-img{
+        @include header_items();
+
+        img {
+            @include full_size();
+        }
+    }
+
+    h1 {
+        font-size: map-get($font-sizes, "largest");
+    }
+
+    .header-btn {
+        @include header_items();
+
+        button {
+            @include buttons(100%, 100%);
+
+            &:hover {
+            cursor: pointer;
+            background-color: lighten(map-get($colors, "attention"), 10);
+            color: lighten(map-get($colors, "primary"), 5);
+            }
+        }
+    }
+
+    nav {
+        width: 100%;
+        margin-top: .5%;
+
+        ul {
+            @include flex(null, null, space-evenly, center, null);
+            max-width: 100%;          
+            list-style: none;
+            padding-left: 0%;
+
+            li {
+                a {
+                    font-size: map-get($font_sizes, "large");
+                    font-weight: map-get($font_weights, "thicker");
+                    color: map-get($colors, "primary");
+                    text-decoration: none;
+                    transition: color .5s ease,
+                                text-decoration 1s ease;
+
+                    &:hover {
+                        color: map-get($colors, "attention");
+                        text-decoration: underline map-get($colors, "attention");
+                    }
+                }
+            }
+        }
+    }
+}
