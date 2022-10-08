@@ -445,84 +445,88 @@ footer .contact-info i:hover {
   color: rgb(115, 34, 26);
 }
 
-@media screen and (max-width: 733px) {
+@media screen and (max-width: 900px) {
   header {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 70% 30%;
-    grid-template-areas: "img title btn" "nav nav nav";
-    align-content: center;
-    align-items: center;
-    height: 24vh;
+    max-height: 30vh;
   }
-  .header-img {
-    width: 100%;
+  header .header-img {
+    width: 20%;
     height: auto;
-    grid-area: img;
   }
   header h1 {
-    grid-area: title;
-    max-width: 100%;
+    width: 50%;
+    max-height: 40%;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5em;
   }
-  .header-btn {
-    width: 100%;
+  header .header-btn {
+    width: 20%;
     height: 70%;
-    grid-area: btn;
+  }
+  header .header-btn button {
+    font-size: 1.1em;
   }
   header nav {
-    grid-area: nav;
     min-width: 100%;
-    margin-top: 2%;
+  }
+  header nav ul li {
+    font-size: 1.1em;
   }
   main #carousel-llama {
     max-width: 65%;
   }
   footer {
-    padding-top: 3%;
+    padding: 1.5% 0%;
   }
   .story {
     grid-template-columns: 30% 70%;
   }
-  .story-img {
+  .story .story-img {
     max-width: 90%;
   }
-  .story-desc {
+  .story .story-desc {
     max-width: 90%;
   }
-  .story-desc h2 {
+  .story .story-desc h2 {
     font-size: 1.2rem;
   }
-  .story-desc p {
+  .story .story-desc p {
     font-size: 0.9rem;
   }
-  .story-prog {
+  .story .story-prog {
     display: none;
   }
   #game {
-    flex-wrap: nowrap;
+    display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    align-content: none;
   }
-  .gamescreen {
-    width: 90%;
-    height: 70vh;
+  #game .gamescreen {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: auto;
   }
-  .gamepad {
-    display: block;
-    max-width: 80%;
-    margin-top: 2%;
+  #game .gamescreen img {
+    width: 50%;
+    height: auto;
   }
-  .gamepad .btn-container {
+  #game .gamescreen .adv-txt {
+    margin: 1%;
+    height: 60%;
+  }
+  #game .gamepad {
+    width: 70%;
+    height: auto;
+  }
+  #game .gamepad .btn-container {
     width: 100%;
   }
-  .gamepad .btn-container button {
-    font-size: 1rem;
-  }
-  .character {
-    display: none;
+  #game .gamepad .btn-container button {
+    font-size: 1.1em;
   }
   #profile {
     display: flex;
@@ -530,25 +534,25 @@ footer .contact-info i:hover {
     justify-content: space-evenly;
     align-items: center;
   }
-  .char-info {
+  #profile .char-info {
     width: 80%;
     margin: 1% 0%;
   }
-  .char-info img {
+  #profile .char-info .char-info img {
     width: 30%;
   }
-  .char-info .char-details h2 {
+  #profile .char-info .char-details h2 {
     font-size: 1.5rem;
   }
-  .char-details h3 {
+  #profile .char-info .char-details h3 {
     font-size: 1rem;
   }
-  .achievements {
+  #profile .achievements {
     margin: 1% 0%;
     width: 80%;
     height: 50%;
   }
-  .char-desc-container {
+  #profile .char-desc-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -557,41 +561,142 @@ footer .contact-info i:hover {
     width: 80%;
     margin: 1% 0%;
   }
-  .char-desc-item {
+  #profile .char-desc-container .char-desc-item {
     width: 100%;
     margin: 1% 0%;
   }
-  .char-desc-item h2 {
+  #profile .char-desc-container .char-desc-item h2 {
     font-size: 1.2rem;
     text-align: center;
   }
-  .char-desc-item ul {
+  #profile .char-desc-container .char-desc-item ul {
     width: 100%;
     text-align: center;
     font-size: 1em;
     padding-left: 0%;
   }
+  footer {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 790px) {
+  header .header-img {
+    width: 15%;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  header .header-btn {
+    width: 15%;
+    height: 40%;
+    font-size: 1.1em;
+  }
+  #game .gamescreen {
+    width: 90%;
+    height: auto;
+  }
+  #game .gamepad {
+    display: flex;
+    flex-direction: none;
+    flex-wrap: none;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    height: auto;
+  }
+  footer {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 526px) {
+  header h1 {
+    font-size: 1.1em;
+  }
+  header .header-btn button {
+    max-height: 100%;
+    font-size: 0.7em;
+  }
+  header nav ul li {
+    font-size: 0.9em;
+  }
+  #game .gamescreen {
+    display: block;
+    width: 90%;
+    height: auto;
+  }
+  #game .gamepad {
+    display: flex;
+    flex-direction: none;
+    flex-wrap: none;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    height: auto;
+  }
+  #game .gamepad .character {
+    display: none;
+  }
+  footer {
+    font-size: 0.9em;
+  }
+  footer .contact-info p {
+    display: none;
+  }
 }
 @media screen and (max-width: 370px) {
   header {
     display: flex;
+    flex-direction: none;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
+    height: auto;
+    padding-top: 10%;
   }
-  .header-img {
-    width: 25%;
+  header h1 {
+    width: 70%;
+    font-size: 0.9em;
   }
-  .header-btn, .header-btn button {
-    display: none;
+  header .header-img {
+    width: 50%;
+    margin-bottom: 1%;
+  }
+  header .header-btn button {
+    font-size: 0.7em;
+  }
+  header nav ul li {
+    font-size: 0.7em;
   }
   .story {
     display: flex;
     flex-direction: column;
+    flex-wrap: none;
     justify-content: center;
     align-items: center;
+    align-content: none;
+    margin-bottom: 2%;
   }
-  .story-desc h2 {
+  .story h2 {
     text-align: center;
+  }
+  #game .gamescreen {
+    width: 90%;
+    height: auto;
+  }
+  #game .gamepad {
+    display: flex;
+    flex-direction: none;
+    flex-wrap: none;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    height: auto;
+  }
+  footer {
+    font-size: 0.7em;
   }
 }/*# sourceMappingURL=main.css.map */
