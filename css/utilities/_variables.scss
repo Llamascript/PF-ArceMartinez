@@ -1,7 +1,4 @@
 @use "sass:map";
-// Base sizes
-$base-padding: 1;
-$base-margin: 1;
 
 $primary: rgb(242, 226, 196);
 $secondary: rgb(252, 253, 237);
@@ -17,45 +14,3 @@ $colors: (
     "attention": $attention,
     "danger": $danger,
 );
-
-$utilities: (
-    "padding": (
-        "prefix": "p",
-        "sizes": (
-            "0": 0,
-            "1": $base-padding,
-            "2": $base-padding * 2,
-            "3": $base-padding * 4,
-            "4": $base-padding * 6,
-            "5": $base-padding * 8
-        ),
-    ),
-    "margin": (
-        "prefix": "m",
-        "sizes": (
-            "0": 0,
-            "1": $base-margin,
-            "3": $base-margin * 4,
-            "4": $base-margin * 6,
-            "5": $base-margin * 8
-        )
-    )
-);
-
-// Utilities classes
-@each $property, $map in $utilities {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values" );
-
-    @each $key, $value in $values {
-        @if ( $key == "default" ) {
-            .#{$prefix} {
-                #{$property}: $value
-            }
-        } @else {
-            .#{$prefix}-#{$key} {
-                #{$property}: $value
-            }
-        }
-    }
-}

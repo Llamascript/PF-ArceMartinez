@@ -22,10 +22,15 @@ header {
 header .header-img {
   width: 12%;
   height: 65%;
+  border-color: rgb(115, 34, 26);
+  border-style: solid;
 }
 header .header-img img {
   width: 100%;
   height: 100%;
+}
+header .header-img img:hover {
+  box-shadow: 0.3rem -0.3rem 1rem rgb(115, 34, 26), -0.3rem 0.3rem 1rem rgb(64, 20, 16);
 }
 header h1 {
   font-size: 2.5em;
@@ -370,6 +375,49 @@ main audio {
 }
 #credits .data h3 {
   font-size: 1.5em;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+}
+form div, form select {
+  margin: 3% 0%;
+}
+form div input:active, form div option:active, form select input:active, form select option:active {
+  border-color: rgb(115, 34, 26);
+}
+
+.form-control {
+  background-color: rgb(252, 253, 237);
+  border: 1px solid #88281f;
+}
+.form-control:focus {
+  color: rgb(64, 20, 16);
+  background-color: rgb(252, 253, 237);
+  border-color: rgb(115, 34, 26);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #69211a;
+}
+
+.form-select {
+  background-color: rgb(252, 253, 237);
+  border: 1px solid #88281f;
+}
+.form-select:focus {
+  border-color: rgb(115, 34, 26);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #69211a;
+}
+
+.form-check-input:focus {
+  border-color: rgb(115, 34, 26);
+  outline: 0px;
+  box-shadow: #69211a 0px 0px 0px 0.25rem;
+}
+.form-check-input:checked {
+  background-color: rgb(115, 34, 26);
+  border-color: rgb(115, 34, 26);
 }
 
 footer {

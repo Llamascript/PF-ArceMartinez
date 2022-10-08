@@ -11,8 +11,16 @@ header {
     .header-img{
         @include header_items();
 
+        border-color: map-get($colors, "attention");
+        border-style: solid;
+
         img {
             @include full_size();
+
+            &:hover {
+                box-shadow: .3rem -.3rem 1rem map-get($colors, "attention"),
+                            -.3rem .3rem 1rem map-get($colors, "danger");
+            }
         }
     }
 
