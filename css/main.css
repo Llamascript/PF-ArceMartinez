@@ -175,10 +175,12 @@ main audio {
   display: flex;
   justify-content: space-between;
   background-color: rgb(242, 226, 196);
+  height: 100vh;
 }
 #game .gamescreen {
   width: 60%;
   height: 73vh;
+  height: auto;
 }
 #game .gamescreen img {
   width: 98%;
@@ -205,7 +207,7 @@ main audio {
   align-items: flex-end;
   align-content: center;
   width: 40%;
-  height: 73vh;
+  height: auto;
 }
 #game .gamepad .btn-container {
   display: grid;
@@ -213,6 +215,10 @@ main audio {
   grid-template-columns: 1fr 1fr;
   width: 50%;
   height: 60%;
+}
+#game .gamepad .btn-container a {
+  text-decoration: none;
+  color: rgb(64, 20, 16);
 }
 #game .gamepad .btn-container button {
   margin: 10%;
@@ -376,6 +382,10 @@ main audio {
 #credits .data h3 {
   font-size: 1.5em;
 }
+#credits .data h3 a {
+  text-decoration: none;
+  color: rgb(64, 20, 16);
+}
 
 form {
   width: 80%;
@@ -418,6 +428,15 @@ form div input:active, form div option:active, form select input:active, form se
 .form-check-input:checked {
   background-color: rgb(115, 34, 26);
   border-color: rgb(115, 34, 26);
+}
+
+#notfound {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+#notfound img {
+  height: 100vh;
 }
 
 footer {

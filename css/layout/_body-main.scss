@@ -86,9 +86,11 @@ main {
 #game {
     @include flex(null, null, space-between, null, null);
     background-color: map-get($colors, "primary");
+    height: 100vh;
 
     .gamescreen {
         @include set_width_height(60%, 73vh);
+        height: auto;
 
         img {
             @include set_width_height(98%, 60%);
@@ -112,11 +114,16 @@ main {
 
     .gamepad {
         @include flex(null, wrap, center, flex-end, center);
-        @include set_width_height(40%, 73vh);
+        @include set_width_height(40%, auto);
 
         .btn-container {
             @include grid_btn_container();
             @include set_width_height(50%, 60%);
+
+            a {
+                text-decoration: none;
+                color: map-get($colors, "danger");
+            }
 
             button {
                 margin: 10%;
@@ -274,6 +281,11 @@ main {
 
         h3 {
             font-size: map-get($font_sizes, "large");
+
+            a {
+                text-decoration: none;
+                color: map-get($colors, "danger");
+            }
         }
     }
 }
@@ -328,5 +340,14 @@ form {
     &:checked {
         background-color: map-get($colors, "attention");
         border-color: map-get($colors, "attention");
+    }
+}
+
+#notfound {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    img {
+        height: 100vh;
     }
 }
