@@ -7,67 +7,46 @@
 
 header {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  align-content: center;
   width: 100%;
   height: 25vh;
   margin: 0 0;
   padding: 3vh 2vw;
-  box-sizing: border-box;
   background-color: rgb(140, 128, 116);
   color: rgb(242, 226, 196);
-  overflow: hidden;
+  box-sizing: border-box;
 }
 header .header-img {
+  -o-object-fit: scale;
+     object-fit: scale;
   width: 12%;
   height: 65%;
-  border-color: rgb(115, 34, 26);
-  border-style: solid;
 }
 header .header-img img {
   width: 100%;
   height: 100%;
+  border-color: rgb(115, 34, 26);
+  border-style: solid;
 }
 header .header-img img:hover {
-  box-shadow: 0.3rem -0.3rem 1rem rgb(115, 34, 26), -0.3rem 0.3rem 1rem rgb(64, 20, 16);
+  background-color: rgb(115, 34, 26);
+  color: rgb(64, 20, 16);
 }
 header h1 {
-  font-size: 2.5em;
-}
-header .header-btn {
-  width: 12%;
-  height: 65%;
-}
-header .header-btn button {
-  width: 100%;
-  height: 100%;
-  border-style: solid;
-  border-color: rgb(115, 34, 26);
-  border-radius: 4px;
-  background-color: #91857a;
-  font-weight: bold;
-  color: #edd8af;
-}
-header .header-btn button:hover {
-  cursor: pointer;
-  background-color: #9d2e23;
-  color: #f7ecd9;
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
 }
 header nav {
-  width: 100%;
-  margin-top: 0.5%;
+  background-color: rgb(140, 128, 116);
 }
-header nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  max-width: 100%;
-  list-style: none;
-  padding-left: 0%;
+header nav ul li {
+  margin-left: 5%;
 }
 header nav ul li a {
-  font-size: 1.5em;
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   font-weight: 700;
   color: rgb(242, 226, 196);
   text-decoration: none;
@@ -86,22 +65,26 @@ main {
   height: 75%;
   margin: 0 0;
   padding: 5vh 2vw;
-  min-height: 73vh;
-  box-sizing: border-box;
   background-color: rgb(242, 226, 196);
   color: rgb(64, 20, 16);
+  min-height: 73vh;
+  box-sizing: border-box;
 }
 main #carousel-llama {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: justify-center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   transition: box-shadow 0.5s ease;
   max-width: 35%;
   margin: 2vh auto;
   border-radius: 7px;
 }
 main #carousel-llama:hover {
-  box-shadow: 0.3rem -0.3rem 1rem rgb(115, 34, 26), -0.3rem 0.3rem 1rem rgb(64, 20, 16);
+  background-color: rgb(115, 34, 26);
+  color: rgb(64, 20, 16);
 }
 main #carousel-llama .carousel-inner .carousel-item img {
   width: 100%;
@@ -113,9 +96,9 @@ main .intro-txt {
   height: 19.5%;
   margin: 0% 0%;
   padding: 0% 20%;
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   max-height: 19.5%;
   max-width: 100%;
-  font-size: 1.1em;
   text-align: center;
 }
 main audio {
@@ -136,13 +119,14 @@ main audio {
   height: 100%;
 }
 .story .story-img:hover {
-  box-shadow: 0.3rem -0.2rem 0.1rem rgb(115, 34, 26), -0.3rem 0.2rem 0.7rem rgb(64, 20, 16);
+  background-color: rgb(242, 226, 196);
+  color: rgb(64, 20, 16);
 }
-.story a {
+.story .story-img a {
   width: 100%;
   height: 100%;
 }
-.story a img {
+.story .story-img a img {
   width: 100%;
   height: 100%;
 }
@@ -155,8 +139,8 @@ main audio {
   text-decoration: none;
 }
 .story .story-desc a h2 {
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
   margin-bottom: 5%;
-  font-size: 2em;
 }
 .story .story-desc a:hover {
   color: rgb(115, 34, 26);
@@ -166,30 +150,40 @@ main audio {
   text-align: center;
   justify-self: center;
   align-self: center;
-  font-size: 2.5em;
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   font-weight: 600;
   color: rgb(64, 20, 16);
 }
 
 #game {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
   background-color: rgb(242, 226, 196);
+  color: rgb(64, 20, 16);
   height: 100vh;
 }
 #game .gamescreen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
   width: 60%;
-  height: 73vh;
-  height: auto;
+  height: 100%;
 }
 #game .gamescreen img {
-  width: 98%;
-  height: 60%;
+  height: 50%;
   border: solid rgb(64, 20, 16) 1px;
 }
 #game .gamescreen .adv-txt {
-  width: 98%;
-  height: 38%;
+  width: 95%;
+  height: 50%;
+  margin-top: 1%;
   border: solid rgb(64, 20, 16) 1px;
   overflow: auto;
   background-color: rgb(252, 253, 237);
@@ -202,6 +196,7 @@ main audio {
 }
 #game .gamepad {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
@@ -221,27 +216,28 @@ main audio {
   color: rgb(64, 20, 16);
 }
 #game .gamepad .btn-container button {
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   margin: 10%;
   border-radius: 10%;
   border-color: rgb(64, 20, 16);
   background-color: rgb(252, 253, 237);
-  font-size: 1.1em;
   font-weight: 700;
 }
 #game .gamepad .btn-container button:hover {
-  cursor: pointer;
-  background-color: white;
+  background-color: rgb(252, 253, 237);
   color: rgb(115, 34, 26);
+  cursor: pointer;
   border-color: rgb(115, 34, 26);
 }
 #game .gamepad .character {
   display: flex;
+  background-color: rgb(252, 253, 237);
+  color: rgb(64, 20, 16);
   width: 98%;
   height: 36%;
   margin: 0% 0%;
   padding: 2% 2%;
   border: solid rgb(64, 20, 16) 1px;
-  background-color: rgb(252, 253, 237);
 }
 #game .gamepad .character a {
   width: 25%;
@@ -249,7 +245,8 @@ main audio {
   transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;
 }
 #game .gamepad .character a:hover {
-  box-shadow: 0.3rem -0.2rem 0.1rem rgb(115, 34, 26), -0.3rem 0.2rem 0.7rem rgb(64, 20, 16);
+  background-color: rgb(115, 34, 26);
+  color: rgb(64, 20, 16);
 }
 #game .gamepad .character a img {
   width: 100%;
@@ -262,17 +259,21 @@ main audio {
   padding: 0% 0%;
 }
 #game .gamepad .character .char-description p {
-  font-size: 2em;
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
 }
 #game .gamepad .character .char-description ul {
   list-style: none;
   margin-left: none;
-  font-size: 1.1em;
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
 }
 
 #profile {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
   height: auto;
 }
 #profile .char-info {
@@ -294,13 +295,13 @@ main audio {
   margin-left: 3%;
 }
 #profile .char-info .char-details h2 {
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
   max-width: 100%;
   margin-bottom: 1%;
-  font-size: 2.5em;
 }
 #profile .char-info .char-details h3 {
+  font-size: clamp(1.3rem, 0.7rem + 1.4vw, 2rem);
   max-width: 100%;
-  font-size: 2em;
 }
 #profile .char-info .progress-bar {
   background-color: rgb(115, 34, 26);
@@ -318,7 +319,7 @@ main audio {
   text-align: center;
 }
 #profile .achievements h2 {
-  font-size: 1.5em;
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
   color: rgb(64, 20, 16);
 }
 #profile .achievements ul {
@@ -333,7 +334,11 @@ main audio {
 }
 #profile .char-desc-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
   width: 100%;
   height: 50%;
 }
@@ -343,6 +348,7 @@ main audio {
   margin: 0% 0%;
   padding: 1% 0.5%;
   background-color: rgb(252, 253, 237);
+  color: rgb(64, 20, 16);
   border: solid rgb(64, 20, 16) 1px;
 }
 #profile .char-desc-container .char-desc-item:hover {
@@ -350,12 +356,12 @@ main audio {
   color: rgb(115, 34, 26);
 }
 #profile .char-desc-container .char-desc-item h2 {
-  font-size: 2em;
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
   text-align: center;
 }
 #profile .char-desc-container .char-desc-item ul {
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   padding-left: 0%;
-  font-size: 1.5em;
   list-style: none;
   text-align: center;
 }
@@ -363,24 +369,26 @@ main audio {
 #credits {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   width: 100%;
   height: auto;
-  box-sizing: border-box;
   background-color: rgb(242, 226, 196);
   color: rgb(64, 20, 16);
+  box-sizing: border-box;
 }
 #credits .data {
   padding: 4% 0%;
   text-align: center;
 }
 #credits .data h2 {
-  font-size: 2em;
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
   font-weight: 500;
 }
 #credits .data h3 {
-  font-size: 1.5em;
+  font-size: clamp(1.3rem, 0.7rem + 1.4vw, 2rem);
 }
 #credits .data h3 a {
   text-decoration: none;
@@ -397,17 +405,23 @@ form div, form select {
 form div input:active, form div option:active, form select input:active, form select option:active {
   border-color: rgb(115, 34, 26);
 }
+form #submit {
+  color: rgb(64, 20, 16);
+  background-color: rgb(140, 128, 116);
+  border-color: rgb(115, 34, 26);
+}
 
 .form-control {
   background-color: rgb(252, 253, 237);
   border: 1px solid #88281f;
 }
 .form-control:focus {
+  background-color: rgb(252, 253, 237);
   color: rgb(64, 20, 16);
   background-color: rgb(252, 253, 237);
+  color: rgb(115, 34, 26);
   border-color: rgb(115, 34, 26);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem #69211a;
 }
 
 .form-select {
@@ -430,26 +444,50 @@ form div input:active, form div option:active, form select input:active, form se
   border-color: rgb(115, 34, 26);
 }
 
-#notfound {
+#error404 {
   display: flex;
   justify-content: center;
-  background-color: black;
-}
-#notfound img {
+  align-items: center;
+  background-image: url(../../../media/img/notfound.webp);
+  background-size: cover;
+  background-position: center;
   height: 100vh;
+}
+#error404 .error-details {
+  background-color: rgb(252, 253, 237);
+  opacity: 0.6;
+  color: rgb(64, 20, 16);
+  height: auto;
+  text-align: center;
+}
+#error404 .error-details #error-title {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+}
+#error404 .error-details #error-text {
+  font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
+}
+#error404 .error-details #error-link {
+  text-decoration: none;
+  color: rgb(115, 34, 26);
+}
+#error404 .error-details #error-link:hover {
+  color: rgb(64, 20, 16);
 }
 
 footer {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   width: 100%;
   height: 20%;
   margin: 0% 0%;
   padding: 1vh 2vw;
-  box-sizing: border-box;
   background-color: rgb(140, 128, 116);
   color: rgb(242, 226, 196);
+  box-sizing: border-box;
 }
 footer .contact-info {
   width: 25%;
@@ -476,20 +514,20 @@ footer .contact-info i:hover {
     width: 50%;
     max-height: 40%;
     text-align: center;
-    font-size: 1.5em;
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
   }
   header .header-btn {
     width: 20%;
     height: 70%;
   }
   header .header-btn button {
-    font-size: 1.1em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   header nav {
     min-width: 100%;
   }
   header nav ul li {
-    font-size: 1.1em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   main #carousel-llama {
     max-width: 65%;
@@ -522,6 +560,7 @@ footer .contact-info i:hover {
     justify-content: center;
     align-items: center;
     align-content: none;
+    height: auto;
   }
   #game .gamescreen {
     display: flex;
@@ -545,7 +584,7 @@ footer .contact-info i:hover {
     width: 100%;
   }
   #game .gamepad .btn-container button {
-    font-size: 1.1em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   #profile {
     display: flex;
@@ -595,20 +634,16 @@ footer .contact-info i:hover {
     padding-left: 0%;
   }
   footer {
-    font-size: 1.1em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
 }
 @media screen and (max-width: 790px) {
   header .header-img {
     width: 15%;
   }
-  header h1 {
-    font-size: 1.5em;
-  }
   header .header-btn {
     width: 15%;
     height: 40%;
-    font-size: 1.1em;
   }
   #game .gamescreen {
     width: 90%;
@@ -625,19 +660,19 @@ footer .contact-info i:hover {
     height: auto;
   }
   footer {
-    font-size: 1em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
 }
 @media screen and (max-width: 526px) {
   header h1 {
-    font-size: 1.1em;
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
   }
   header .header-btn button {
     max-height: 100%;
-    font-size: 0.7em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   header nav ul li {
-    font-size: 0.9em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   #game .gamescreen {
     display: block;
@@ -658,7 +693,7 @@ footer .contact-info i:hover {
     display: none;
   }
   footer {
-    font-size: 0.9em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   footer .contact-info p {
     display: none;
@@ -676,18 +711,13 @@ footer .contact-info i:hover {
     padding-top: 10%;
   }
   header h1 {
-    width: 70%;
-    font-size: 0.9em;
-  }
-  header .header-img {
-    width: 50%;
-    margin-bottom: 1%;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   header .header-btn button {
-    font-size: 0.7em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   header nav ul li {
-    font-size: 0.7em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
   .story {
     display: flex;
@@ -716,6 +746,6 @@ footer .contact-info i:hover {
     height: auto;
   }
   footer {
-    font-size: 0.7em;
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1.3rem);
   }
 }/*# sourceMappingURL=main.css.map */

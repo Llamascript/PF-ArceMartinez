@@ -1,0 +1,62 @@
+@use "sass:math";
+
+header {
+    @include flex(
+    $wrap: wrap,
+    $justify: space-evenly,
+    $align-i: center
+    );
+    @include set_boxmodel(100%, math.div(100vh, 4), 0, 0, 3vh, 2vw);
+    @include color-scheme($darker, $primary);
+    box-sizing: border-box;
+
+    .header-img{
+        @include header_items();
+
+        img {
+            @include full_size();
+            border-color: $attention;
+            border-style: solid;
+
+            &:hover {
+                @include color-scheme($alert ...);
+            }
+        }
+    }
+
+    h1 {
+        @include font-size(
+            map-get($font_sizes_h1, "min"),
+            map-get($font_sizes_h1, "desired"),
+            map-get($font_sizes_h1, "vw"),
+            map-get($font_sizes_h1, "max")
+            );
+    }
+
+    nav {
+        background-color: $darker;
+        ul {
+            li {
+                margin-left: 5%;
+                a {
+                    @include font-size(
+                        map-get($font_sizes_p, "min"),
+                        map-get($font_sizes_p, "desired"),
+                        map-get($font_sizes_p, "vw"),
+                        map-get($font_sizes_p, "max")
+                        );
+                    font-weight: map-get($font_weights, "thicker");
+                    color: $primary;
+                    text-decoration: none;
+                    transition: color .5s ease,
+                                text-decoration 1s ease;
+
+                    &:hover {
+                        color: $attention;
+                        text-decoration: underline $attention;
+                    }
+                }
+            }
+        }
+    }
+}

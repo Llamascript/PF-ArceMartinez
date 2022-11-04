@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "sass:list";
+
+// COLORS
+$primary: rgb(242, 226, 196);
+$secondary: rgb(252, 253, 237);
+$darker: rgb(140, 128, 116);
+$attention: rgb(115, 34, 26);
+$danger: rgb(64, 20, 16);
+
+// COLOR SCHEMES
+$default: $primary, $danger;
+$contrast: $darker, $primary;
+$light-bg: $secondary, $danger;
+$light-bg-highlight: $secondary, $attention;
+$alert: $attention, $danger;

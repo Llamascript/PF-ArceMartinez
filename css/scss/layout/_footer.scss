@@ -1,9 +1,8 @@
 footer {
-    @include flex(null, null, center, center, null);
+    @include flex($justify: center, $align-i: center);
     @include set_boxmodel(100%, 20%, 0%, 0%, 1vh, 2vw);
+    @include color-scheme($darker, $primary);
     box-sizing: border-box;
-    background-color: map-get($colors, "darker");
-    color: map-get($colors, "primary");
 
     .contact-info {
         @include set_width_height(25%, 99%);
@@ -11,9 +10,9 @@ footer {
         text-align: center;
 
         i {
-            color: map-get($colors, "primary");
+            color: $primary;
             &:hover {
-                color: map-get($colors, "attention");
+                color: $attention;
             }
         }
     }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Historia de un dragón que aterroriza una aldea y cómo los aldeanos luchan contra él.">
     <meta name="keywords" content="aventura, elige, historias, juego, jugar, magia, fantasia, dragon, llamascript">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../css/main.css">
     <script src="https://kit.fontawesome.com/c4bc77b9d5.js" crossorigin="anonymous"></script></head>
     <title>La búsqueda del dragón blanco</title>
@@ -14,15 +15,30 @@
 <body>
     <!-- HEADER -->
     <header>
-        <a href="../../../index.html" class="header-img"><img src="../../../media/img/llamascript-logo.webp" alt="El logo de Llamascript es un line art de una llama y texto a su costado que dice en inglés 'Solo cosas de llama'."></a>
-        <h1>LA BÚSQUEDA DEL DRAGÓN BLANCO</h1>
-        <a href="../../player/signup.html" class="header-btn"><button>ENTRAR</button></a>
-        <nav>
-            <ul>
-                <li><a href="../../player/profile.html">Perfil</a></li>
-                <li><a href="../choose.html">Historias</a></li>
-                <li><a href="../../credits.html">Creditos</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg fixed-top shadow-lg">
+            <div class="container-fluid">
+                <a href="../../../index.html" class="header-img navbar-brand"><img src="../../../media/img/llamascript-logo.webp" alt="El logo de Llamascript es un line art de una llama y texto a su costado que dice en inglés 'Solo cosas de llama'."></a>
+                <h1>LA BUSQUEDA DEL DRAGON BLANCO</h1>
+                <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"><i class="fa-solid fa-bars"></i></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="../../player/profile.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../choose.html">Historias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../credits.html">Creditos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../player/signup.html" class="header-btn">Entrar</a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
         </nav>
     </header>
 
@@ -93,5 +109,6 @@
             <p>Suscíbete</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

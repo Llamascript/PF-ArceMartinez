@@ -1,0 +1,78 @@
+// IMPORTS
+@use "sass:list";
+
+// COLOR SCHEMES
+@mixin color-scheme($background, $text) {
+
+    // If I only have one color for the background, I will use it as normal,
+    // but if I have more than one, that means I want a shadow!
+
+   @if list.length($background) == 1 {
+    background-color: $background;
+    } @else {
+        &:hover {
+            box-shadow: -.2rem .2rem 2rem list.nth($background, 1),
+                    .2rem -.2rem 2rem list.nth($background, 2);
+        }
+    };
+    color: $text;
+};
+
+// FONT SIZE
+@mixin font-size($min, $desired:1rem, $vw:1vw, $max) {
+    // Use rems on parameters, except for vw.
+    // The desired font size ensures a set base size to scale up using the size of the viewport.
+    font-size: clamp($min, $desired + $vw, $max);
+}
+
+@mixin set_boxmodel($width, $height, $vertical_margin, $horizontal_margin, $vertical_padding, $horizontal_padding) {
+    width: $width;
+    height: $height;
+    margin: $vertical_margin $horizontal_margin;
+    padding: $vertical_padding $horizontal_padding;
+}
+
+@mixin set_width_height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin header_items {
+    object-fit: scale;
+    width: 12%;
+    height: 65%;
+}
+
+@mixin buttons($width, $height) {
+    @include color-scheme(
+        lighten($darker, 2),
+        darken($primary, 5)
+        );
+    width: $width;
+    height: $height;
+    border-style: solid;
+    border-color: $attention;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+@mixin character_a_hover {
+    transition: box-shadow .2s ease-in,
+    transform .2s ease-in;
+
+    &:hover {
+        @include color-scheme($alert...);
+    }
+}
+
+@mixin full_size {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin center_text {
+    width: 100%;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}

@@ -18,14 +18,24 @@ $breakpoints: (
             width: 50%;
             max-height: 40%;
             text-align: center;
-            font-size: map-get($font_sizes, "large");
+            @include font-size(
+                map-get($font_sizes_h1, "min"),
+                map-get($font_sizes_h1, "desired"),
+                map-get($font_sizes_h1, "vw"),
+                map-get($font_sizes_h1, "max")
+                );
         }
 
         .header-btn {
             width: 20%;
             height: 70%;
             button {
-                font-size: map-get($font_sizes, "plus_one");
+                @include font-size(
+                    map-get($font_sizes_p, "min"),
+                    map-get($font_sizes_p, "desired"),
+                    map-get($font_sizes_p, "vw"),
+                    map-get($font_sizes_p, "max")
+                    );
             }
         }
 
@@ -33,8 +43,12 @@ $breakpoints: (
             min-width: 100%;
             ul {
                 li {
-                    font-size: map-get($font_sizes, "plus_one");
-                    font-weight: map-get($font_sizes, "thin");
+                    @include font-size(
+                        map-get($font_sizes_p, "min"),
+                        map-get($font_sizes_p, "desired"),
+                        map-get($font_sizes_p, "vw"),
+                        map-get($font_sizes_p, "max")
+                        );
                 }
             }
         }
@@ -72,6 +86,7 @@ $breakpoints: (
 
     #game {
         @include flex(column, nowrap, center, center, none);
+        height: auto;
 
         .gamescreen {
             display: flex;
@@ -96,12 +111,15 @@ $breakpoints: (
                 width: 100%;
 
                 button {
-                    font-size: map-get($font_sizes, "plus_one");
+                    @include font-size(
+                        map-get($font_sizes_p, "min"),
+                        map-get($font_sizes_p, "desired"),
+                        map-get($font_sizes_p, "vw"),
+                        map-get($font_sizes_p, "max")
+                        );
                 }
             }
 
-            .character {
-            }
         }
     }
 
@@ -162,7 +180,12 @@ $breakpoints: (
         }
     }
     footer {
-        font-size: map-get($font_sizes, "plus_one");
+        @include font-size(
+            map-get($font_sizes_p, "min"),
+            map-get($font_sizes_p, "desired"),
+            map-get($font_sizes_p, "vw"),
+            map-get($font_sizes_p, "max")
+            );
     }
 }
 
@@ -172,14 +195,9 @@ $breakpoints: (
             width: 15%;
         }
 
-        h1 {
-            font-size: map-get($font_sizes, "large");
-        }
-
         .header-btn {
             width: 15%;
             height: 40%;
-            font-size: map-get($font_sizes, "plus_one");
         }
     }
 
@@ -195,25 +213,45 @@ $breakpoints: (
         }
     }
     footer {
-        font-size: map-get($font_sizes, "regular");
+        @include font-size(
+            map-get($font_sizes_p, "min"),
+            map-get($font_sizes_p, "desired"),
+            map-get($font_sizes_p, "vw"),
+            map-get($font_sizes_p, "max")
+            );
     }
 }
 
 @media screen and (max-width: map-get($breakpoints, "sm")) {
     header {
         h1 {
-            font-size: map-get($font_sizes, "plus_one");
+            @include font-size(
+                map-get($font_sizes_h1, "min"),
+                map-get($font_sizes_h1, "desired"),
+                map-get($font_sizes_h1, "vw"),
+                map-get($font_sizes_h1, "max")
+                );
         }
         .header-btn {
             button {
                 max-height: 100%;
-                font-size: map-get($font_sizes, "xsmall");
+                @include font-size(
+                    map-get($font_sizes_p, "min"),
+                    map-get($font_sizes_p, "desired"),
+                    map-get($font_sizes_p, "vw"),
+                    map-get($font_sizes_p, "max")
+                    );
             }
         }
         nav {
             ul {
                 li {
-                    font-size: map-get($font_sizes, "small");
+                    @include font-size(
+                        map-get($font_sizes_p, "min"),
+                        map-get($font_sizes_p, "desired"),
+                        map-get($font_sizes_p, "vw"),
+                        map-get($font_sizes_p, "max")
+                        );
                 }
             }
         }
@@ -238,7 +276,12 @@ $breakpoints: (
     }
 
     footer {
-        font-size: map-get($font_sizes, "small");
+        @include font-size(
+            map-get($font_sizes_p, "min"),
+            map-get($font_sizes_p, "desired"),
+            map-get($font_sizes_p, "vw"),
+            map-get($font_sizes_p, "max")
+            );
 
         .contact-info {
             p {
@@ -255,25 +298,34 @@ $breakpoints: (
         padding-top: 10%;
 
         h1 {
-            width: 70%;
-            font-size: map-get($font_sizes, "small");
-        }
-
-        .header-img {
-            width: 50%;
-            margin-bottom: 1%;
+            @include font-size(
+                map-get($font_sizes_p, "min"),
+                map-get($font_sizes_p, "desired"),
+                map-get($font_sizes_p, "vw"),
+                map-get($font_sizes_p, "max")
+                );
         }
 
         .header-btn {
             button {
-                font-size: map-get($font_sizes, "xsmall");
+                @include font-size(
+                    map-get($font_sizes_p, "min"),
+                    map-get($font_sizes_p, "desired"),
+                    map-get($font_sizes_p, "vw"),
+                    map-get($font_sizes_p, "max")
+                    );
             }
         }
 
         nav {
             ul {
                 li {
-                    font-size: map-get($font_sizes, "xsmall");
+                    @include font-size(
+                        map-get($font_sizes_p, "min"),
+                        map-get($font_sizes_p, "desired"),
+                        map-get($font_sizes_p, "vw"),
+                        map-get($font_sizes_p, "max")
+                        );
                 }
             }
         }
@@ -301,6 +353,11 @@ $breakpoints: (
     }
 
     footer {
-        font-size: map-get($font_sizes, "xsmall");
+        @include font-size(
+            map-get($font_sizes_p, "min"),
+            map-get($font_sizes_p, "desired"),
+            map-get($font_sizes_p, "vw"),
+            map-get($font_sizes_p, "max")
+            );;
     }
 }

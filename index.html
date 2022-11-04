@@ -16,15 +16,30 @@
 <body>
     <!-- HEADER -->
     <header>
-        <a href="index.html" class="header-img"><img src="media/img/llamascript-logo.webp" alt="El logo de Llamascript es un line art de una llama y texto a su costado que dice en inglés 'Solo cosas de llama'."></a>
-        <h1 class="title">JUEGA TU PROPIA AVENTURA</h1>
-        <a href="pages/player/signup.html" class="header-btn"><button>ENTRAR</button></a>
-        <nav>
-            <ul>
-                <li><a href="pages/player/profile.html">Perfil</a></li>
-                <li><a href="pages/stories/choose.html">Historias</a></li>
-                <li><a href="pages/credits.html">Creditos</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg fixed-top shadow-lg">
+            <div class="container-fluid">
+                <a href="index.html" class="header-img navbar-brand"><img src="media/img/llamascript-logo.webp" alt="El logo de Llamascript es un line art de una llama y texto a su costado que dice en inglés 'Solo cosas de llama'."></a>
+                <h1>ELIJE TU PROPIA AVENTURA</h1>
+                <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"><i class="fa-solid fa-bars"></i></span>
+                </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="pages/player/profile.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/stories/choose.html">Historias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/credits.html">Creditos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/player/signup.html" class="header-btn">Entrar</a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
         </nav>
     </header>
 
